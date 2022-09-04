@@ -1,0 +1,371 @@
+.display {
+	width: calc(100% - 6.8rem);
+}
+
+.card {
+	background: #e9e9f4;
+	position: relative;
+	z-index: 2;
+	width: 100%;
+	// height: 80%;
+	border-radius: 1rem;
+	display: flex;
+	flex-direction: row;
+
+	@media only screen and (max-width: $tab-land) {
+		flex-direction: column-reverse;
+		gap: 2rem;
+		margin-bottom: 10rem;
+	}
+}
+
+.products {
+	min-width: 40rem;
+	background-color: #dddcf1;
+	overflow-y: scroll;
+
+	&__nav {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+		.active {
+			background: rgba(255, 255, 255, 0.64);
+		}
+	}
+
+	&__content {
+		padding: 0 2rem;
+	}
+
+	.mbl-content {
+		display: none;
+	}
+
+	@media only screen and (max-width: $tab-land) {
+		width: 100%;
+		padding: 2rem;
+
+		.product-content {
+			display: none;
+		}
+
+		.mbl-content {
+			display: block;
+			.product-content {
+				display: block;
+			}
+
+			.list {
+				display: flex;
+				align-items: center;
+				gap: 3rem;
+				margin-bottom: 2rem;
+			}
+
+			.link {
+				color: $color-primary;
+				font-size: 1.2rem;
+				font-weight: 400;
+				border-bottom: 3px solid transparent;
+				padding-bottom: 0.6rem;
+			}
+			.link:hover,
+			.active {
+				font-weight: 700;
+				border-bottom: 3px solid $color-primary;
+			}
+		}
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #bdbde0;
+	}
+
+	&::-webkit-scrollbar {
+		width: 0.5rem;
+		height: 0.5rem;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $color-primary;
+		border-radius: 10px;
+	}
+
+	& > h4 {
+		@media only screen and (max-width: $tab-land) {
+			display: none;
+		}
+	}
+
+	&__form {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		background-color: #f2f3f7;
+		padding: 1rem 1.5rem;
+		gap: 1rem;
+
+		@media only screen and (max-width: $tab-land) {
+			background: transparent;
+			padding: 0;
+			margin-bottom: 1.5rem !important;
+
+			.search-icon {
+				height: 5rem;
+				width: 5.5rem;
+				background-color: $color-primary;
+				border: 3px solid $color-white;
+				border-radius: 50%;
+				@include flex-center;
+
+				.icon {
+					fill: $color-white;
+				}
+			}
+		}
+
+		.icon {
+			height: 2rem;
+			width: 2rem;
+		}
+	}
+	&__input {
+		border: none;
+		outline: none;
+		background-color: transparent;
+		width: 100%;
+		font-family: $font-roboto;
+
+		&::placeholder {
+			font-family: $font-roboto;
+		}
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1.4rem;
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	&__item {
+		height: 8.2rem;
+		min-width: 8.2rem;
+		background-color: $color-white;
+		border-radius: 0.5rem;
+
+		@media only screen and (max-width: $tab-land) {
+			height: 120px;
+			min-width: 120px;
+			width: 120px;
+		}
+
+		img {
+			@include img-size;
+			transform: scale(0.6);
+		}
+	}
+}
+
+.cookies {
+	width: 100%;
+	height: auto;
+	// padding: 2rem 0;
+	margin: 0 auto;
+	position: relative;
+
+	@media only screen and (max-width: $tab-land) {
+		width: 100%;
+		.sub-nav {
+			display: none;
+		}
+	}
+
+	&__btns {
+		display: flex;
+		align-items: center;
+		gap: 2.8rem;
+		button {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+
+			.icon {
+				height: 1.4rem;
+				width: 1.8rem;
+			}
+
+			span {
+				font-size: 1rem;
+				font-family: $font-secondary;
+				font-weight: 400;
+				text-transform: capitalize;
+			}
+		}
+	}
+
+	.sub-nav {
+		// margin-right: 2rem;
+		padding: 1.5rem 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+	}
+
+	&__card {
+		width: 80%;
+		margin: 0 auto;
+		border: 21px solid rgba(0, 0, 0, 0.12);
+		// border-radius: 1rem;
+		background-color: $color-white;
+		// padding: 0 2rem;
+
+		@media only screen and (max-width: $tab-land) {
+			border-bottom: 2px solid #888889;
+		}
+	}
+
+	&__nav {
+		// background-color: #e7ecff;
+		padding: 1.5rem 2rem;
+		// border-radius: 1rem 1rem 0 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+		@media only screen and (max-width: $mbl-land) {
+			flex-direction: column;
+			gap: 1.5rem;
+			align-items: start;
+			// border-bottom: 2px solid #888889;
+		}
+
+		.right {
+			display: flex;
+			align-items: center;
+			gap: 1.6rem;
+		}
+
+		.servings {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			border-left: 1px solid rgba(0, 0, 0, 0.2);
+			padding-left: 3rem;
+
+			.icon {
+				height: 2rem;
+				width: 2rem;
+				fill: $color-black;
+			}
+
+			details {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+			}
+		}
+	}
+
+	h4 {
+		font-size: 1.4rem;
+		font-weight: 700;
+		padding-left: 2rem;
+	}
+
+	&__list {
+		padding: 1.5rem 2rem;
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	&__item {
+		border: 2px solid #e8eaed;
+		padding: 0.5rem;
+		border-radius: 0.6rem;
+		//  text-align: center;
+	}
+
+	.input {
+		// margin-bottom: 2rem;
+	}
+
+	// &__img {
+	//   img {
+	//   }
+	// }
+	&__name {
+		font-size: 1.2rem;
+		font-weight: 900;
+		background-color: rgba(112, 118, 156, 0.17);
+		//  display: inline-block;
+		margin: 0 auto;
+		width: 5.5rem;
+		padding: 0.2rem 0;
+		border-radius: 0.2rem;
+		margin-bottom: 0.5rem;
+		color: $color-black;
+	}
+	&__title {
+		font-size: 1.4rem;
+		font-weight: 700;
+		margin-bottom: 0.2rem;
+		color: $color-black;
+	}
+	&__desc {
+		font-size: 0.8rem;
+		color: $color-black;
+	}
+
+	&__footer {
+		padding: 2.8rem 1.6rem;
+		border: 1px solid rgba(0, 0, 0, 0.2);
+
+		h4 {
+			padding: 0;
+		}
+
+		.btn-add-step {
+			border: 2px solid #5e00f5;
+			background-color: transparent;
+			color: #5e00f5;
+			font-weight: 700;
+		}
+	}
+}
+
+.sub-nav {
+	display: flex;
+	align-items: center;
+	// justify-content: space-between;
+	// gap: 13.5rem;
+
+	.percentege {
+		display: flex;
+		align-items: center;
+		gap: 2.5rem;
+
+		h5 {
+			color: #1c1b1f;
+		}
+	}
+
+	.btn-minus,
+	.btn-plus {
+		background-color: $color-primary;
+		height: 3.2rem;
+		width: 3.2rem;
+		@include flex-center;
+		color: $color-white;
+	}
+
+	.heading {
+		font-size: 1.7rem;
+	}
+}

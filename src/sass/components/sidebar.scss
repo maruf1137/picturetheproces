@@ -1,0 +1,35 @@
+.sidebar {
+	height: auto;
+	width: 6.8rem;
+	background-color: $color-bg-dark;
+	// border-radius: 1rem 0 0 1rem;
+	position: relative;
+	padding: 2rem 0;
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		// @media only screen and (max-width: $tab-land) {
+		// 	display: flex;
+		// 	flex-direction: row;
+		// 	gap: 1rem;
+		// 	width: 100%;
+		// 	justify-content: center;
+		// }
+	}
+
+	&__link {
+		padding: 1rem 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.text {
+			font-size: 1.2rem;
+			font-weight: 400;
+			color: $color-white;
+		}
+	}
+}

@@ -1,0 +1,146 @@
+.nav {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	position: relative;
+	z-index: 2;
+	padding: 2rem;
+	background: linear-gradient(
+		190.57deg,
+		rgba(255, 255, 255, 0.56) 19.25%,
+		rgba(248, 248, 255, 0.71) 54.39%,
+		rgba(255, 255, 255, 0.59) 90.02%
+	);
+	box-shadow: -90px 48.5967px 140px rgba(126, 123, 160, 0.2);
+	backdrop-filter: blur(19px);
+
+	@media only screen and (max-width: $tab-land) {
+		gap: 1.5rem;
+	}
+
+	@media only screen and (max-width: 21.25em) {
+		gap: 0.5rem;
+	}
+
+	&__logo {
+		height: 7.6rem;
+		width: 14.6rem;
+		justify-self: start;
+
+		img {
+			@include img-size;
+		}
+
+		@media only screen and (max-width: $tab-land) {
+			display: none;
+		}
+	}
+
+	.back-btn {
+		margin-right: auto;
+		display: flex;
+		align-items: center;
+		gap: 1.2rem;
+
+		@media only screen and (max-width: $tab-port) {
+			gap: 0.2rem;
+			margin-right: 2rem;
+		}
+		@media only screen and (max-width: $mbl-land) {
+			gap: 0.2rem;
+			margin-right: 1rem;
+		}
+
+		.chevron {
+			border: 1px solid #e9ebf3;
+			background-color: #f9f9fc;
+			height: 4rem;
+			width: 4rem;
+			@include flex-center;
+			border-radius: 50%;
+		}
+
+		.text {
+			font-size: 1.8rem;
+			color: $color-primary;
+
+			@media only screen and (max-width: $tab-port) {
+				display: none;
+			}
+		}
+	}
+
+	.sub-nav {
+		display: none;
+
+		@media only screen and (max-width: $tab-port) {
+			display: flex;
+			margin-bottom: 0 !important;
+			gap: 2rem;
+			margin-right: auto;
+			justify-content: space-between;
+		}
+
+		@media only screen and (max-width: $mbl-land) {
+			.percentege {
+				gap: 1.4rem;
+			}
+		}
+	}
+
+	&__btns {
+		display: flex;
+		align-items: center;
+		gap: 3rem;
+
+		@media only screen and (max-width: $tab-port) {
+			gap: 1.5rem;
+		}
+
+		.btn-share {
+			border: 2px solid $color-white;
+			background: $color-secondary;
+		}
+		.btn-download {
+			border: 2px solid $color-primary;
+			background: $color-white;
+			color: $color-primary;
+
+			@media only screen and (max-width: $tab-port) {
+				display: none;
+			}
+		}
+		.btn-share {
+			border: 2px solid $color-white;
+			background: $color-primary;
+		}
+
+		@media only screen and (max-width: $tab-port) {
+			.btn span {
+				display: none;
+			}
+		}
+
+		@media only screen and (max-width: $mbl-small) {
+			.btn {
+				padding: 1rem;
+			}
+		}
+	}
+	&__user {
+		height: 5.5rem;
+		width: 3.5rem;
+		@media only screen and (max-width: $tab-port) {
+			display: none;
+		}
+
+		img {
+			@include img-size;
+		}
+	}
+
+	.icon {
+		height: 1.7rem;
+		width: 2rem;
+	}
+}
