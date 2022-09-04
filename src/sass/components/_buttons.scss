@@ -11,7 +11,7 @@ button {
 	color: $color-white;
 	display: flex;
 	align-items: center;
-	gap: 1.9rem;
+	gap: 1.2rem;
 	font-size: 1.3rem;
 	border-radius: 0.5rem;
 	font-family: $font-secondary;
@@ -28,6 +28,21 @@ button {
 
 		&:hover {
 			background: rgba(255, 255, 255, 0.64);
+		}
+	}
+
+	&__text {
+		background-color: transparent;
+		padding: 0;
+		border: none;
+		color: $color-primary;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		font-size: 1.3rem;
+
+		&:hover {
+			color: $color-primary;
 		}
 	}
 }
