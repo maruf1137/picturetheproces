@@ -1413,10 +1413,16 @@ button {
   gap: 0.5rem;
 }
 .products__item {
-  height: 8.2rem;
+  max-height: 10rem;
   min-width: 8.2rem;
   background-color: #fff;
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #f2f3f7;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
 }
 @media only screen and (max-width: 62em) {
   .products__item {
@@ -1425,10 +1431,21 @@ button {
     width: 120px;
   }
 }
-.products__item img {
+.products__img {
+  height: 8rem;
+  width: 8rem;
+}
+.products__img img {
   height: 100%;
   width: 100%;
   transform: scale(0.6);
+}
+.products h5 {
+  font-size: 10px;
+  background-color: #fff;
+  width: 100%;
+  padding: 0.3rem 0;
+  border-radius: 0 0 3px 3px;
 }
 
 .cookies {
@@ -1473,10 +1490,12 @@ button {
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .cookies__card {
-  width: 80%;
+  max-width: 68rem;
+  width: 100%;
   margin: 0 auto;
   border: 21px solid rgba(0, 0, 0, 0.12);
   background-color: #fff;
+  position: relative;
 }
 @media only screen and (max-width: 62em) {
   .cookies__card {
@@ -1526,14 +1545,55 @@ button {
 }
 .cookies__list {
   padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 2.5rem;
+}
+.cookies .btn-add-row {
+  position: absolute;
+  bottom: 16%;
+  right: -14%;
+  padding: 0;
+  border: 1px solid #5e00f5;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  gap: 0;
+}
+.cookies .btn-add-row .icon {
+  background-color: #5e00f5;
+  color: white;
+  border: 1px solid #5e00f5;
+  font-size: 5rem;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+}
+.cookies .btn-add-row .text {
+  background-color: white;
+  color: #5e00f5;
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  font-size: 10px;
+}
+.cookies .btn-add-page {
+  position: absolute;
+  bottom: 2rem;
+  right: -14rem;
 }
 .cookies__item {
   border: 2px solid #e8eaed;
   padding: 0.5rem;
   border-radius: 0.6rem;
+  position: relative;
+}
+.cookies__item:not(:last-child)::after {
+  position: absolute;
+  top: 50%;
+  right: -3rem;
+  transform: translateY(-50%);
+  content: "+";
+  display: block;
+  font-size: 5rem;
 }
 .cookies__name {
   font-size: 1.2rem;
@@ -1558,16 +1618,44 @@ button {
 }
 .cookies__footer {
   padding: 2.8rem 1.6rem;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  background-color: #fafafa;
+  position: relative;
 }
 .cookies__footer h4 {
   padding: 0;
 }
-.cookies__footer .btn-add-step {
+.cookies__footer .btn-add-step,
+.cookies__footer .btn-add-ingredients {
   border: 2px solid #5e00f5;
   background-color: transparent;
   color: #5e00f5;
   font-weight: 700;
+}
+.cookies__footer .btn-add-ingredients {
+  position: relative;
+  z-index: 2;
+  position: absolute;
+  top: 73%;
+  right: -15%;
+  transform: translateY(-50%);
+}
+.cookies__footer .btn-add-ingredients::before {
+  content: "+";
+  height: 5.2rem;
+  width: 5.2rem;
+  background-color: #5e00f5;
+  border-radius: 3px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  left: -4.5rem;
+  transform: translateY(-50%);
+  z-index: -1;
 }
 
 .sub-nav {
@@ -1607,17 +1695,140 @@ button {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  height: 100%;
 }
 .sidebar__link {
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 }
 .sidebar__link .text {
   font-size: 1.2rem;
   font-weight: 400;
   color: #fff;
+}
+.sidebar .btn-settings {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.popup {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+}
+.popup .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(82, 82, 82, 0.3);
+  backdrop-filter: blur(10px);
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.popup__wrapper {
+  background: #ffffff;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px -1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  max-width: 28rem;
+  width: 100%;
+  padding: 2rem 2.4rem;
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+.popup h3 {
+  color: #da6863;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.popup p {
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #63666a;
+}
+.popup__btns {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
+}
+.popup__btns .btn {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #5e00f5;
+}
+
+.show-popup {
+  opacity: 1;
+  visibility: visible;
+}
+.show-popup .overlay,
+.show-popup .popup__wrapper {
+  opacity: 1;
+  visibility: visible;
+}
+
+.page-11 .ingredients .cookies__item:last-child::after {
+  position: absolute;
+  top: 50%;
+  right: -3rem;
+  transform: translateY(-50%);
+  content: "+";
+  display: block;
+  font-size: 5rem;
+  background: #5e00f5;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.page-11 .tools .cookies__item {
+  background: rgba(194, 206, 221, 0.39);
+  border: 1.2px solid #979797;
+}
+.page-11 .cookies__name,
+.page-11 .cookies__title {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.pages-card {
+  position: absolute;
+  top: 0;
+  right: -22%;
+}
+.pages-card__item h5 {
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 0px;
+  /* identical to box height, or 0% */
+  color: #5e00f5;
 }
 
 /*# sourceMappingURL=style.css.map */

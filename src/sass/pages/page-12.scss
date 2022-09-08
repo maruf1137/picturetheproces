@@ -1,0 +1,17 @@
+.pages-card {
+	position: absolute;
+	top: 0;
+	right: -22%;
+
+	&__item {
+		h5 {
+			margin-bottom: 1.2rem;
+			font-weight: 700;
+			font-size: 10px;
+			line-height: 0px;
+			/* identical to box height, or 0% */
+
+			color: #5e00f5;
+		}
+	}
+}
