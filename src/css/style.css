@@ -1167,6 +1167,8 @@ button {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  text-decoration: none;
+  color: #451690;
 }
 @media only screen and (max-width: 48em) {
   .nav .back-btn {
@@ -1297,6 +1299,7 @@ button {
   min-width: 40rem;
   background-color: #dddcf1;
   overflow-y: scroll;
+  padding-bottom: 5rem;
 }
 .products__nav {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -1790,6 +1793,26 @@ button {
 .show-popup .popup__wrapper {
   opacity: 1;
   visibility: visible;
+}
+
+.demo__h1, .demo__p {
+  background: rgba(112, 118, 156, 0.173214);
+  margin: 0 auto;
+}
+.demo__h1 {
+  height: 1.5rem;
+  width: 3.8rem;
+  margin-bottom: 0.4rem;
+}
+.demo__p {
+  height: 0.6rem;
+  width: 6.8rem;
+}
+.demo__p:not(:last-child) {
+  margin-bottom: 0.4rem;
+}
+.demo:not(:last-child)::after {
+  color: rgba(112, 118, 156, 0.173214);
 }
 
 .page-11 .ingredients .cookies__item:last-child::after {

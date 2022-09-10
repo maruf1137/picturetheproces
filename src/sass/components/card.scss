@@ -23,6 +23,7 @@
 	min-width: 40rem;
 	background-color: #dddcf1;
 	overflow-y: scroll;
+	padding-bottom: 5rem;
 
 	&__nav {
 		border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -371,28 +372,6 @@
 		}
 	}
 
-	// &__item.item-hide {
-	// 	&::before {
-	// 		height: 100%;
-	// 		width: 100%;
-	// 		content: '';
-	// 		display: block;
-	// 		background-color: rgba(0, 0, 0, 0.413);
-	// 		position: absolute;
-	// 		top: 0;
-	// 		left: 0;
-	// 		z-index: 2;
-	// 	}
-	// }
-
-	.input {
-		// margin-bottom: 2rem;
-	}
-
-	// &__img {
-	//   img {
-	//   }
-	// }
 	&__name {
 		font-size: 1.2rem;
 		font-weight: 900;

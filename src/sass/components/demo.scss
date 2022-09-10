@@ -1,0 +1,26 @@
+.demo {
+	&__h1,
+	&__p {
+		background: rgba(112, 118, 156, 0.173214);
+		margin: 0 auto;
+	}
+
+	&__h1 {
+		height: 1.5rem;
+		width: 3.8rem;
+		margin-bottom: 0.4rem;
+	}
+
+	&__p {
+		height: 0.6rem;
+		width: 6.8rem;
+
+		&:not(:last-child) {
+			margin-bottom: 0.4rem;
+		}
+	}
+
+	&:not(:last-child)::after {
+		color: rgba(112, 118, 156, 0.173214);
+	}
+}

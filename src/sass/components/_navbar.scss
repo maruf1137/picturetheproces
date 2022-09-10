@@ -41,6 +41,8 @@
 		display: flex;
 		align-items: center;
 		gap: 1.2rem;
+		text-decoration: none;
+		color: #451690;
 
 		@media only screen and (max-width: $tab-port) {
 			gap: 0.2rem;
