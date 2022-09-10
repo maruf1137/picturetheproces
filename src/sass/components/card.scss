@@ -305,9 +305,11 @@
 
 	&__list {
 		padding: 1.5rem 2rem;
-		display: grid;
+		// display: grid;
 		// grid-template-columns: repeat(5, 1fr);
-		grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+		// grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+		display: flex;
+		flex-wrap: wrap;
 		gap: 2.5rem;
 	}
 
@@ -351,8 +353,10 @@
 		padding: 0.5rem;
 		border-radius: 0.6rem;
 		position: relative;
-		// max-width: 9rem;
-		// width: 100%;
+		max-width: 9rem;
+		width: 100%;
+		z-index: 1;
+		mix-blend-mode: darken;
 
 		&:not(:last-child) {
 			&::after {
@@ -366,6 +370,20 @@
 			}
 		}
 	}
+
+	// &__item.item-hide {
+	// 	&::before {
+	// 		height: 100%;
+	// 		width: 100%;
+	// 		content: '';
+	// 		display: block;
+	// 		background-color: rgba(0, 0, 0, 0.413);
+	// 		position: absolute;
+	// 		top: 0;
+	// 		left: 0;
+	// 		z-index: 2;
+	// 	}
+	// }
 
 	.input {
 		// margin-bottom: 2rem;

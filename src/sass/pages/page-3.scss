@@ -1,0 +1,139 @@
+.set-element {
+	.products {
+		background: linear-gradient(
+			190.57deg,
+			rgba(255, 255, 255, 0.56) 19.25%,
+			rgba(248, 248, 255, 0.71) 54.39%,
+			rgba(255, 255, 255, 0.59) 90.02%
+		);
+		box-shadow: -10px 48.5967px 140px rgba(126, 123, 160, 0.2);
+		backdrop-filter: blur(19px);
+
+		&__nav {
+			// width: 100%;
+			// position: relative;
+			padding: 2rem 0;
+			width: 100%;
+			background: rgba(94, 0, 245, 0.05);
+			transition: all 0.5s;
+
+			.btn__products {
+				padding: 0;
+				background-color: transparent;
+				font-weight: 700;
+				font-size: 1.8rem;
+				color: #5e00f5;
+				width: auto;
+				gap: 1.8rem;
+				padding-right: 1.7rem;
+
+				.btn-icon {
+					height: 3rem;
+					width: 3rem;
+					background: linear-gradient(180deg, #e9ebf3 -7.22%, #f9f9fc 54.54%);
+					border-radius: 50%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				.icon {
+					fill: #5e00f5;
+				}
+			}
+		}
+
+		&__img {
+			position: relative;
+			height: 14rem;
+			width: 13rem;
+			background: #ffffff;
+			border: 2px solid #d9d9d9;
+
+			img {
+				max-height: 4.9rem;
+				height: auto;
+				width: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+
+		&__name {
+			position: absolute;
+			top: 72%;
+			left: 50%;
+			transform: translateX(-50%);
+			font-weight: 600;
+			font-size: 1.5rem;
+			color: #000;
+		}
+
+		.label {
+			font-weight: 500;
+			font-size: 1.6rem;
+			color: #533b7a;
+			text-transform: capitalize;
+			width: 100%;
+		}
+
+		.input {
+			width: 100%;
+			max-width: 27rem;
+		}
+
+		.input,
+		select {
+			background: #ffffff;
+			border: 2px solid #d9d9d9;
+			border-radius: 4px;
+			padding: 1rem 0.8rem;
+			text-transform: capitalize;
+		}
+
+		.gap-2 {
+			gap: 2;
+		}
+
+		.btn {
+			max-width: 18rem;
+			width: 100%;
+			font-size: 1.6rem;
+		}
+
+		.btn__submit {
+			color: #fff;
+			gap: 2.7rem;
+			border: 1px solid transparent;
+			font-weight: 900;
+
+			&:hover {
+				background-color: transparent;
+				color: #6775f8;
+				border: 1px solid #6775f8;
+
+				.icon {
+					fill: #6775f8;
+				}
+			}
+
+			.icon {
+				fill: #fff;
+				height: 1.7rem;
+			}
+		}
+
+		.btn__discard {
+			background-color: transparent;
+			color: #6775f8;
+			border: 1px solid #6775f8;
+			font-weight: 500;
+
+			&:hover {
+				background-color: #6775f8;
+				color: #fff;
+			}
+		}
+	}
+}
