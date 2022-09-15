@@ -6,10 +6,32 @@
 	position: relative;
 	padding: 2rem 0;
 
+	&__icon {
+		background: white;
+		height: 3.5rem;
+		width: 3.5rem;
+		border-radius: 50%;
+		@include flex-center;
+
+		.icon {
+			height: 2.2rem;
+			width: 2.2rem;
+			fill: #5e00f5;
+		}
+
+		.icon-settings {
+			fill: #333333;
+		}
+	}
+
+	.active .sidebar__icon {
+		background: #9b9bab !important;
+	}
+
 	&__list {
 		display: flex;
 		flex-direction: column;
-		gap: 2rem;
+		gap: 1rem;
 		height: 100%;
 	}
 

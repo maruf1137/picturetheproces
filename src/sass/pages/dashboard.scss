@@ -1,4 +1,13 @@
 .dashboard {
+	.sidebar {
+		.icon {
+			fill: #333333;
+		}
+
+		.active .icon {
+			fill: #ffffff !important;
+		}
+	}
 	.display {
 		padding: 4rem;
 		background-image: url('../img/dashboard-bg.png');

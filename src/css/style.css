@@ -1698,10 +1698,30 @@ button {
   position: relative;
   padding: 2rem 0;
 }
+.sidebar__icon {
+  background: white;
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar__icon .icon {
+  height: 2.2rem;
+  width: 2.2rem;
+  fill: #5e00f5;
+}
+.sidebar__icon .icon-settings {
+  fill: #333333;
+}
+.sidebar .active .sidebar__icon {
+  background: #9b9bab !important;
+}
 .sidebar__list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   height: 100%;
 }
 .sidebar__link {
@@ -1858,6 +1878,12 @@ button {
   color: #5e00f5;
 }
 
+.dashboard .sidebar .icon {
+  fill: #333333;
+}
+.dashboard .sidebar .active .icon {
+  fill: #ffffff !important;
+}
 .dashboard .display {
   padding: 4rem;
   background-image: url("../img/dashboard-bg.png");
